@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Resume</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f7f2;
+            color: #17211f;
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1180px;
+            margin: 35px auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        /* Sidebar */
+
+        .sidebar {
+            background: #17211f;
+            color: white;
+            padding: 30px 25px;
+            border-radius: 20px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .brand {
+            color: #b9f36b;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .profile-image {
+            width: 110px;
+            height: 110px;
+            border-radius: 25px;
+            background: #293832;
+            margin: 30px 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #b9f36b;
+            font-size: 30px;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar h1 {
+            font-family: Manrope, sans-serif;
+            font-size: 25px;
+            line-height: 1.3;
+        }
+
+        .designation {
+            color: #b9f36b;
+            font-size: 13px;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        .description {
+            color: #b9c3bd;
+            font-size: 13px;
+            margin: 17px 0;
+        }
+
+        .side-heading {
+            color: #87958d;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            margin: 25px 0 12px;
+        }
+
+        .contact-info p {
+            color: #dce5de;
+            font-size: 12px;
+            margin: 12px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .navigation a {
+            color: #c3cdc6;
+            font-size: 13px;
+            padding: 9px 12px;
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+
+        .navigation a:hover {
+            background: #293832;
+            color: #b9f36b;
+        }
+
+        /* Main Content */
+
+        main {
+            min-width: 0;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0 20px;
+        }
+
+        .status {
+            color: #687570;
+            font-size: 12px;
+        }
+
+        .download {
+            background: white;
+            border: 1px solid #e5e9e2;
+            padding: 9px 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* Hero */
+
+        .hero {
+            background: #b9f36b;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .hero small {
+            color: #455b30;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .hero h2 {
+            font-family: Manrope, sans-serif;
+            font-size: 38px;
+            line-height: 1.2;
+            margin: 17px 0;
+        }
+
+        .hero p {
+            color: #435438;
+            font-size: 14px;
+            max-width: 550px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 11px 17px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .btn-dark {
+            background: #17211f;
+            color: white;
+        }
+
+        .btn-light {
+            border: 1px solid #17211f;
+            color: #17211f;
+        }
+
+        /* Sections */
+
+        .section {
+            background: white;
+            border: 1px solid #e5e9e2;
+            border-radius: 17px;
+            padding: 28px;
+            margin-top: 22px;
+        }
+
+        .section-label {
+            color: #6c9e2f;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .section h3 {
+            font-family: Manrope, sans-serif;
+            font-size: 21px;
+            margin: 5px 0 20px;
+        }
+
+        .section p {
+            color: #687570;
+            font-size: 14px;
+        }
+
+        /* Education */
+
+        .education-box {
+            border: 1px solid #e5e9e2;
+            border-radius: 11px;
+            padding: 17px;
+            margin-bottom: 12px;
+        }
+
+        .education-box h4 {
+            font-size: 14px;
+        }
+
+        .education-box span {
+            color: #6c9e2f;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Skills */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills span {
+            background: #f2f6ed;
+            border: 1px solid #e5ebdd;
+            padding: 8px 13px;
+            border-radius: 7px;
+            font-size: 12px;
+            color: #46544b;
+        }
+
+        /* Projects */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .project {
+            background: #f6f8f3;
+            padding: 19px;
+            border-radius: 12px;
+        }
+
+        .project h4 {
+            font-size: 15px;
+            margin: 8px 0;
+        }
+
+        .project p {
+            font-size: 12px;
+        }
+
+        .project span {
+            color: #6c9e2f;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* Contact */
+
+        .contact-box {
+            background: #17211f;
+            color: white;
+            padding: 25px;
+            border-radius: 13px;
+        }
+
+        .contact-box h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .contact-box p {
+            color: #bdc9c1;
+            margin-bottom: 15px;
+        }
+
+        .contact-box a {
+            display: inline-block;
+            background: #b9f36b;
+            color: #17211f;
+            padding: 10px 15px;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        footer {
+            text-align: center;
+            color: #87958d;
+            font-size: 11px;
+            padding: 25px 0;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 850px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .navigation {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .hero {
+                padding: 25px;
+            }
+
+            .hero h2 {
+                font-size: 29px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                gap: 10px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                width: 100%;
+                margin: 0;
+                grid-template-columns: 240px 1fr;
+                gap: 10px;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .topbar,
+            .hero-buttons,
+            .navigation {
+                display: none;
+            }
+
+            .section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="brand">MY PORTFOLIO</div>
+
+        <div class="profile-image">
+            YN
+        </div>
+
+       
+
+        <h1>AMIT SAW</h1>
+
+        <div class="designation">
+            Student | Web Developer
+        </div>
+
+        <p class="description">
+            I am a passionate learner interested in technology,
+            business and personal development.
+        </p>
+
+        <div class="side-heading">CONTACT</div>
+
+        <div class="contact-info">
+            <p>Email: yourmail@gmail.com</p>
+            <p>Phone: +91 xxxxx-xxxxx</p>
+            <p>Location: delhi-110086, India</p>
+        </div>
+
+        <div class="side-heading">MENU</div>
+
+        <nav class="navigation">
+            <a href="#about">About Me</a>
+            <a href="#education">Education</a>
+            <a href="#skills">My Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </aside>
+
+
+    <main>
+
+     
+
+        <section class="hero">
+
+            <small>WELCOME TO MY PROFILE</small>
+
+            <h2>
+                Building Skills.<br>
+                Creating Opportunities.
+            </h2>
+
+            <p>
+                Hello! I am Your Name. I am passionate about
+                learning new skills, exploring technology and
+                building my professional career.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-dark">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="btn btn-light">
+                    Contact Me
+                </a>
+            </div>
+
+        </section>
+
+        <!-- About -->
+
+        <section class="section" id="about">
+
+            <div class="section-label">INTRODUCTION</div>
+              <b>
+            <h3>About  </h3></b>
+            <h4>I am a student who is passionate about learning new skills and exploring different fields. I am currently learning Digital Marketing and have a strong interest in Finance.
+
+I also enjoy developing my knowledge of Business and Finance. Apart from learning, I love playing and listening to music.
+
+I believe in continuous learning, self-improvement, and gaining practical knowledge to build a successful future.</h4>
+
+            <p>
+                Write your professional introduction here.
+                Tell visitors about yourself, your education,
+                your interests and your career goals.
+            </p>
+
+        </section>
+
+        <!-- Education -->
+
+        <section class="section" id="education">
+
+            <div class="section-label">ACADEMIC BACKGROUND</div>
+
+            <h3>Education</h3>
+
+            <div class="education-box">
+                <h4>Graduation / Degree</h4>
+                <span>delhi university | 2026 - Present</span>
+                <p> B.COM pursuing</p>
+            </div>
+
+            <div class="education-box">
+                <h4>12th Standard</h4>
+                <span>SBV.school() | 2026</span>
+                <p>Write your school details here.</p>
+            </div>
+
+        </section>
+
+        <!-- Skills -->
+
+        <section class="section" id="skills">
+
+            <div class="section-label">MY EXPERTISE</div>
+
+            <h3>Skills</h3>
+
+            <div class="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Communication</span>
+                <span>Teamwork</span>
+                <span>Problem Solving</span>
+                <span>MS Office</span>
+            </div>
+
+        </section>
+
+        <!-- Projects -->
+
+        <section class="section" id="projects">
+
+            <div class="section-label">MY WORK</div>
+
+            <h3>Projects</h3>
+
+            <div class="project-grid">
+
+                <div class="project">
+                    <span>PROJECT 01</span>
+                    <h4>Personal Portfolio Website</h4>
+                    <p>
+                        A personal website created to display
+                        my skills, education and projects.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <span>PROJECT 02</span>
+                    <h4>My Second Project</h4>
+                    <p>
+                        Add your project description and
+                        explain what you learned.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Experience -->
+
+        <section class="section" id="experience">
+
+            <div class="section-label">CAREER JOURNEY</div>
+
+            <h3>Experience</h3>
+
+            <div class="education-box">
+                <h4>Fresher</h4>
+                <span>Currently Learning</span>
+                <p>
+                    I am developing my knowledge and practical
+                    skills through personal projects and learning.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Contact -->
+
+        <section class="section" id="contact">
+
+            <div class="section-label">GET IN TOUCH</div>
+
+            <h3>Contact Me</h3>
+
+            <div class="contact-box">
+                <h4>Let's Connect!</h4>
+                <p>
+                    Feel free to contact me for professional
+                    opportunities and collaboration.
+                </p>
+
+                <a href="mailto:yourmail@gmail.com">
+                    Send Email
+                </a>
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 Your Name. All Rights Reserved.
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+</html>
